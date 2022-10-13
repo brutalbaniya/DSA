@@ -11,33 +11,37 @@ class DoublyLinkedList():
         self.head = Node("head")
         self.length = 0
         self.tail = Node("tail")
-        self.head.next = self.tail
-        self.tail.prev = self.head
+        self.head.next = None
+        self.tail.prev = None
+        self.tail.next = self.head
+        self.head.prev = self.tail
 
 
     def addElementFront(self,element):
         node = Node(element)
-        node.next = self.head.next
-        self.head.next = node
-        node.prev = self.head
+        self.head.prev.next = node
+        node.prev = self.head.prev
+        self.head.prev = node
+        node.next = self.head
         self.length += 1
 
 
     def addElementTail(self,element):
         node = Node(element)
-        node.next = self.tail.prev
-        self.tail.prev = node
-        #bookmark--------------
+        lastNode = self.tail
+        lastNode.next.prev = node
+        node.next = lastNode.next
+        node.prev = lastNode
+        self.tail.next = node
+        self.length += 1
 
 
-    def traverse(self):
-        cursor = self.head
-        while(cursor.next!=None):
-            cursor = cursor.next
-        return cursor
+    def _size(self):
+        return self.length
+
 
     def printAllNodes(self):
-        cursor = self.head
+        cursor = self.tail
         while(cursor!=None):
             if(cursor.next==None):
                 print(f'{cursor.element}',sep="",end="",flush=True)
@@ -45,3 +49,18 @@ class DoublyLinkedList():
                 print(f'{cursor.element}',sep="",end="<->",flush=True)
             cursor = cursor.next
         print("\n")
+
+
+
+
+anew = DoublyLinkedList()
+anew.addElementFront(8)
+anew.addElementFront(5)
+anew.addElementFront(3)
+anew.addElementTail(2)
+anew.addElementTail(6)
+anew.addElementTail(9)
+anew.printAllNodes()
+print("Size of list->",anew._size())
+
+

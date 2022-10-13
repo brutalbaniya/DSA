@@ -85,3 +85,7 @@ anew.addElement(6)
 anew.addElement(8)
 anew.printNodes()
 anew.removeElement()
+
+
+#Time Complexity till now without printNodes()&printStack() is - O(n)
+#Total Time Complexity- O(n)
