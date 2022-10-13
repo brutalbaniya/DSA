@@ -64,3 +64,5 @@ anew.printAllNodes()
 print("Size of list->",anew._size())
 
 
+#Time Complexity till now without printAllNodes() is O(1)
+#Total Time Complexity is O(n) 
