@@ -1,3 +1,11 @@
+'''This is an implementation of a basic Doubly Linked Lists
+
+written by- Aman Agrawal
+date - 12/10/2022
+
+'''
+
+
 class Node():
     def __init__(self,element):
         self.element = element

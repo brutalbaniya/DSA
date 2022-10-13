@@ -1,45 +1,15 @@
-class SNode():
-    def __init__(self,value):
-       self.value = value
-       self.next = None
+'''This is an implementation of a Basic Linked List 
 
+written by- Aman Agrawal
+date - 12/10/2022
 
-
-
-class Stack():
-    def __init__(self):
-        self.head = SNode("head")
-        self.length = 0
-        self.tail = self.head
-
-
-    def push(self,number):
-        node = SNode(number)
-        node.next = self.head.next
-        self.head.next = node
-        self.length += 1
-
-
-    def pop(self):
-        popped = self.head.next
-        self.head.next = self.head.next.next
-        self.length -= 1
-        return popped
-
-
-    def printStack(self):
-        cursor = self.head.next
-        while(cursor!=None):
-            print(cursor.value)
-            cursor = cursor.next
-
+'''
 
 
 class LNode():
     def __init__(self, element):
         self.element = element
         self.next = None
-
 
 class LinkedList():
 
@@ -72,13 +42,6 @@ class LinkedList():
 
 
 
-#anew = Stack()
-#anew.push(6)
-#anew.push(8)
-#anew.push(11)
-#anew.pop()
-
-
 anew=LinkedList()
 anew.addElement(5)
 anew.addElement(6)
@@ -87,5 +50,5 @@ anew.printNodes()
 anew.removeElement()
 
 
-#Time Complexity till now without printNodes()&printStack() is - O(1)
+#Time Complexity till now without printNodes() is - O(1)
 #Total Time Complexity- O(n)
